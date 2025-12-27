@@ -19,11 +19,18 @@ export default function LocationPage() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* 지도 영역 */}
           <div className="space-y-6">
-            <div className="relative h-[400px] bg-gradient-to-br from-primary-soft via-natural-soft to-secondary-soft rounded-sm overflow-hidden">
-              {/* 지도 플레이스홀더 - 실제 지도 API로 교체 필요 */}
-              <div className="absolute inset-0 flex items-center justify-center text-text-light">
-                <p className="text-sm">지도 (카카오맵 또는 네이버 지도 연동)</p>
-              </div>
+            <div className="relative h-[400px] rounded-sm overflow-hidden shadow-md">
+              <iframe
+                src={`https://www.google.com/maps?q=서울특별시+강남구+테헤란로+123&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="요가 스튜디오 위치"
+              />
             </div>
           </div>
 
