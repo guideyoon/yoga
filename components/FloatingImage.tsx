@@ -28,3 +28,4 @@ export default function FloatingImage({ src, alt, direction, className = '' }: F
   )
 }
 
+

@@ -52,18 +52,18 @@ export default function Home() {
                   fill
                   className="object-cover"
                   priority={index === 0}
-                  quality={90}
+                  quality={95}
                 />
-                {/* 오버레이 - 이미지 위에 약간의 그라데이션 */}
-                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/40" />
+                {/* 오버레이 - 이미지 위에 약간의 그라데이션 (더 선명하게) */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/20" />
               </div>
             </div>
           ))}
         </div>
         
-        {/* 추가 그라데이션 오버레이 - 더 진하게 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-soft/30 via-transparent to-background/40 z-[1]" />
+        {/* 추가 그라데이션 오버레이 - 이미지 선명도 유지 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/15 to-background/30 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-soft/15 via-transparent to-background/20 z-[1]" />
         
         <div
           className="relative z-10 text-center px-4 space-y-6 transition-transform duration-1000 ease-out"
