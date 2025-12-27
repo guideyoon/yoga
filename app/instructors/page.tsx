@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import instructorsData from '@/data/instructors.json'
 import { Instructor } from '@/types'
 
@@ -21,14 +22,26 @@ export default function InstructorsPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {instructors.map((instructor) => (
-            <div key={instructor.id} className="space-y-6">
-              <div className="relative h-[400px] bg-gradient-to-br from-primary-soft via-secondary-soft to-natural-soft rounded-sm overflow-hidden">
-                {/* 이미지 플레이스홀더 - 실제 이미지로 교체 필요 */}
-                <div className="absolute inset-0 flex items-center justify-center text-text-light">
-                  <p className="text-sm">강사 사진</p>
+          {instructors.map((instructor) => {
+            // 강사별 이미지 매핑
+            const imageMap: Record<string, string> = {
+              instructor1: '/y1.png', // 김요가
+              instructor2: '/y2.png', // 이명상
+            }
+            const imageSrc = imageMap[instructor.id] || '/y1.png'
+            
+            return (
+              <div key={instructor.id} className="space-y-6">
+                <div className="relative h-[400px] rounded-sm overflow-hidden">
+                  <Image
+                    src={imageSrc}
+                    alt={`${instructor.name} 강사`}
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={90}
+                  />
                 </div>
-              </div>
               <div className="space-y-4">
                 <h2 className="text-2xl font-light text-text-dark">
                   {instructor.name}
@@ -41,7 +54,8 @@ export default function InstructorsPage() {
                 </p>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </div>
