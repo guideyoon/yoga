@@ -71,13 +71,13 @@ export default function Home() {
             transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
           }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-text-dark leading-relaxed drop-shadow-[0_2px_8px_rgba(255,255,255,0.8),0_4px_16px_rgba(0,0,0,0.6)]">
             몸과 마음이 함께 쉬는 시간
           </h1>
-          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]">
+          <p className="text-lg md:text-xl text-text-dark max-w-2xl mx-auto drop-shadow-[0_2px_6px_rgba(255,255,255,0.7),0_3px_12px_rgba(0,0,0,0.5)]">
             천천히 호흡하고 자연스럽게 움직입니다
           </p>
-          <p className="text-base md:text-lg text-white/95 drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
+          <p className="text-base md:text-lg text-text-dark drop-shadow-[0_1px_4px_rgba(255,255,255,0.6),0_2px_8px_rgba(0,0,0,0.4)]">
             일상 속에서 나를 돌보는 요가 수련
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
