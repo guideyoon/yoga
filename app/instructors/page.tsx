@@ -23,7 +23,7 @@ export default function InstructorsPage() {
         <div className="grid md:grid-cols-2 gap-12">
           {instructors.map((instructor) => (
             <div key={instructor.id} className="space-y-6">
-              <div className="relative h-[400px] bg-accent/10 rounded-sm overflow-hidden">
+              <div className="relative h-[400px] bg-gradient-to-br from-primary-soft via-secondary-soft to-natural-soft rounded-sm overflow-hidden">
                 {/* 이미지 플레이스홀더 - 실제 이미지로 교체 필요 */}
                 <div className="absolute inset-0 flex items-center justify-center text-text-light">
                   <p className="text-sm">강사 사진</p>

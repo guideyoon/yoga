@@ -50,15 +50,15 @@ export default function AboutPage() {
               </p>
               <ul className="list-none space-y-3 ml-4">
                 <li className="flex items-start">
-                  <span className="text-accent mr-3">•</span>
+                  <span className="text-primary mr-3">•</span>
                   <span>기초 요가 클래스에서 기본 자세와 호흡법을 배웁니다</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3">•</span>
+                  <span className="text-natural mr-3">•</span>
                   <span>강사가 각자의 수준에 맞춰 자세를 조정해드립니다</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-accent mr-3">•</span>
+                  <span className="text-secondary mr-3">•</span>
                   <span>무리하지 않고, 자신의 몸에 귀 기울이며 수련합니다</span>
                 </li>
                 <li className="flex items-start">

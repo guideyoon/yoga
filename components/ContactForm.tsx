@@ -60,7 +60,7 @@ export default function ContactForm() {
           onChange={(e) =>
             setFormData({ ...formData, type: e.target.value as typeof formData.type })
           }
-          className="w-full px-4 py-3 border border-accent/20 bg-white text-text focus:outline-none focus:border-accent transition-colors"
+          className="w-full px-4 py-3 border border-primary/20 bg-white text-text focus:outline-none focus:border-primary transition-colors"
           required
         >
           <option value="수업 문의">수업 문의</option>
@@ -78,7 +78,7 @@ export default function ContactForm() {
           id="name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 border border-accent/20 bg-white text-text focus:outline-none focus:border-accent transition-colors"
+          className="w-full px-4 py-3 border border-primary/20 bg-white text-text focus:outline-none focus:border-primary transition-colors"
           required
         />
       </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
           id="contact"
           value={formData.contact}
           onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-          className="w-full px-4 py-3 border border-accent/20 bg-white text-text focus:outline-none focus:border-accent transition-colors"
+          className="w-full px-4 py-3 border border-primary/20 bg-white text-text focus:outline-none focus:border-primary transition-colors"
           required
         />
       </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
           id="interestedClass"
           value={formData.interestedClass}
           onChange={(e) => setFormData({ ...formData, interestedClass: e.target.value })}
-          className="w-full px-4 py-3 border border-accent/20 bg-white text-text focus:outline-none focus:border-accent transition-colors"
+          className="w-full px-4 py-3 border border-primary/20 bg-white text-text focus:outline-none focus:border-primary transition-colors"
           placeholder="예: 기초 요가, 빈야사 요가"
         />
       </div>
@@ -120,7 +120,7 @@ export default function ContactForm() {
           id="preferredDay"
           value={formData.preferredDay}
           onChange={(e) => setFormData({ ...formData, preferredDay: e.target.value })}
-          className="w-full px-4 py-3 border border-accent/20 bg-white text-text focus:outline-none focus:border-accent transition-colors"
+          className="w-full px-4 py-3 border border-primary/20 bg-white text-text focus:outline-none focus:border-primary transition-colors"
           placeholder="예: 평일 오전, 주말 오후"
         />
       </div>
@@ -141,7 +141,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-8 py-3 bg-accent text-white font-light rounded-sm hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-8 py-3 bg-gradient-to-r from-primary to-natural text-white font-light rounded-sm hover:from-primary-dark hover:to-natural-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? '전송 중...' : '문의 남기기'}
       </button>

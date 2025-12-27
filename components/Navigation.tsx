@@ -18,10 +18,10 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-accent/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-light text-text-dark">
+          <Link href="/" className="text-xl font-light text-text-dark hover:text-primary transition-colors">
             요가 스튜디오
           </Link>
 
@@ -33,8 +33,8 @@ export default function Navigation() {
                 href={item.href}
                 className={`text-sm font-light transition-colors ${
                   pathname === item.href
-                    ? 'text-accent border-b border-accent'
-                    : 'text-text hover:text-accent'
+                    ? 'text-primary border-b border-primary'
+                    : 'text-text hover:text-primary'
                 }`}
               >
                 {item.label}
@@ -68,7 +68,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-accent/10">
+          <div className="md:hidden py-4 space-y-4 border-t border-primary/10">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -76,8 +76,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`block text-sm font-light transition-colors ${
                   pathname === item.href
-                    ? 'text-accent'
-                    : 'text-text hover:text-accent'
+                    ? 'text-primary'
+                    : 'text-text hover:text-primary'
                 }`}
               >
                 {item.label}

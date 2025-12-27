@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* 히어로 섹션 */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary-soft/30 via-background to-background">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary-soft/20 via-transparent to-transparent" />
         <div
           className="relative z-10 text-center px-4 space-y-6 transition-transform duration-1000 ease-out"
           style={{
@@ -37,19 +37,19 @@ export default function Home() {
           <p className="text-lg md:text-xl text-text-light max-w-2xl mx-auto">
             천천히 호흡하고 자연스럽게 움직입니다
           </p>
-          <p className="text-base md:text-lg text-text-light/80">
+          <p className="text-base md:text-lg text-text-muted">
             일상 속에서 나를 돌보는 요가 수련
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link
               href="/classes"
-              className="px-8 py-3 bg-accent text-white font-light rounded-sm hover:bg-accent-dark transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
+              className="px-8 py-3 bg-primary text-white font-light rounded-sm hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
             >
               수업 안내
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border border-accent text-accent font-light rounded-sm hover:bg-accent/5 transition-all duration-300 hover:border-accent/50"
+              className="px-8 py-3 border border-secondary text-secondary font-light rounded-sm hover:bg-secondary-soft transition-all duration-300 hover:border-secondary-dark"
             >
               예약 문의
             </Link>
@@ -77,7 +77,7 @@ export default function Home() {
           </ScrollFadeIn>
           <ScrollFadeIn delay={200}>
             <ImageHover>
-              <div className="relative h-[400px] bg-accent/10 rounded-sm overflow-hidden">
+              <div className="relative h-[400px] bg-gradient-to-br from-natural-soft via-primary-soft to-secondary-soft rounded-sm overflow-hidden">
                 {/* 이미지 플레이스홀더 - 실제 이미지로 교체 필요 */}
                 <div className="absolute inset-0 flex items-center justify-center text-text-light">
                   <p className="text-sm">스튜디오 이미지</p>
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* 클래스 미리보기 */}
-      <section className="bg-background-light py-20">
+      <section className="bg-background-warm py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollFadeIn>
             <div className="text-center mb-12">
@@ -98,16 +98,49 @@ export default function Home() {
             </div>
           </ScrollFadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['기초 요가', '빈야사 요가', '릴렉스 요가', '스트레칭 요가'].map((className, index) => (
-              <ScrollFadeIn key={className} delay={index * 100}>
+            {[
+              { name: '기초 요가', color: 'primary' },
+              { name: '빈야사 요가', color: 'natural' },
+              { name: '릴렉스 요가', color: 'secondary' },
+              { name: '스트레칭 요가', color: 'accent' },
+            ].map((item, index) => (
+              <ScrollFadeIn key={item.name} delay={index * 100}>
                 <Link
                   href="/classes"
-                  className="group block p-6 bg-white border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                  className={`group block p-6 bg-white border transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${
+                    item.color === 'primary'
+                      ? 'border-primary/20 hover:border-primary/40'
+                      : item.color === 'natural'
+                      ? 'border-natural/20 hover:border-natural/40'
+                      : item.color === 'secondary'
+                      ? 'border-secondary/20 hover:border-secondary/40'
+                      : 'border-accent/20 hover:border-accent/40'
+                  }`}
                 >
-                  <h3 className="text-lg font-light text-text-dark mb-2 group-hover:text-accent transition-colors duration-300">
-                    {className}
+                  <h3
+                    className={`text-lg font-light text-text-dark mb-2 transition-colors duration-300 ${
+                      item.color === 'primary'
+                        ? 'group-hover:text-primary'
+                        : item.color === 'natural'
+                        ? 'group-hover:text-natural'
+                        : item.color === 'secondary'
+                        ? 'group-hover:text-secondary'
+                        : 'group-hover:text-accent'
+                    }`}
+                  >
+                    {item.name}
                   </h3>
-                  <p className="text-sm text-text-light group-hover:text-accent/70 transition-colors duration-300">
+                  <p
+                    className={`text-sm text-text-light transition-colors duration-300 ${
+                      item.color === 'primary'
+                        ? 'group-hover:text-primary/70'
+                        : item.color === 'natural'
+                        ? 'group-hover:text-natural/70'
+                        : item.color === 'secondary'
+                        ? 'group-hover:text-secondary/70'
+                        : 'group-hover:text-accent/70'
+                    }`}
+                  >
                     자세히 보기 →
                   </p>
                 </Link>
@@ -130,7 +163,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-accent text-white font-light rounded-sm hover:bg-accent-dark transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-natural text-white font-light rounded-sm hover:from-primary-dark hover:to-natural-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
           >
             예약 문의하기
           </Link>

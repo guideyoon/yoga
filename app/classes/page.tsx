@@ -25,7 +25,7 @@ export default function ClassesPage() {
           {classes.map((classItem) => (
             <div
               key={classItem.id}
-              className="bg-white border border-accent/10 p-8 space-y-4 hover:border-accent/30 transition-colors"
+              className="bg-white border border-primary/10 p-8 space-y-4 hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
               <div className="flex justify-between items-start">
                 <h2 className="text-2xl font-light text-text-dark">
@@ -34,9 +34,9 @@ export default function ClassesPage() {
                 <span className="text-sm text-text-light">{classItem.duration}</span>
               </div>
               <p className="text-text leading-relaxed">{classItem.description}</p>
-              <div className="pt-4 border-t border-accent/10">
+              <div className="pt-4 border-t border-primary/10">
                 <p className="text-sm text-text-light">
-                  <span className="text-accent">추천 대상:</span> {classItem.target}
+                  <span className="text-primary">추천 대상:</span> {classItem.target}
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function ClassesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-accent text-white font-light rounded-sm hover:bg-accent-dark transition-colors"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-natural text-white font-light rounded-sm hover:from-primary-dark hover:to-natural-dark transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
           >
             문의하기
           </Link>

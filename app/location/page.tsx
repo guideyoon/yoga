@@ -19,7 +19,7 @@ export default function LocationPage() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* 지도 영역 */}
           <div className="space-y-6">
-            <div className="relative h-[400px] bg-accent/10 rounded-sm overflow-hidden">
+            <div className="relative h-[400px] bg-gradient-to-br from-primary-soft via-natural-soft to-secondary-soft rounded-sm overflow-hidden">
               {/* 지도 플레이스홀더 - 실제 지도 API로 교체 필요 */}
               <div className="absolute inset-0 flex items-center justify-center text-text-light">
                 <p className="text-sm">지도 (카카오맵 또는 네이버 지도 연동)</p>
@@ -42,10 +42,10 @@ export default function LocationPage() {
               <h2 className="text-xl font-light text-text-dark mb-4">대중교통</h2>
               <div className="space-y-2 text-text">
                 <p>
-                  <span className="text-accent">지하철:</span> 2호선 강남역 3번 출구 도보 5분
+                  <span className="text-primary">지하철:</span> 2호선 강남역 3번 출구 도보 5분
                 </p>
                 <p>
-                  <span className="text-accent">버스:</span> 강남역 정류장 하차
+                  <span className="text-natural">버스:</span> 강남역 정류장 하차
                 </p>
               </div>
             </div>
