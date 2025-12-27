@@ -46,8 +46,8 @@ export default function Navigation() {
           <button
             className={`md:hidden relative p-2 rounded-full transition-all duration-300 ${
               isOpen
-                ? 'bg-primary text-white'
-                : 'bg-primary-soft text-primary hover:bg-primary hover:text-white'
+                ? 'bg-primary-dark text-white'
+                : 'bg-primary text-white hover:bg-primary-dark shadow-md'
             }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="메뉴"
