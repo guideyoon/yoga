@@ -34,3 +34,14 @@ body {
   }
 }
 
+/* 부드러운 인터랙션 효과 */
+@layer components {
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .interactive-card:hover {
+    @apply shadow-md -translate-y-1;
+  }
+}
+
