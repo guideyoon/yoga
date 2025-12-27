@@ -1,0 +1,15 @@
+[
+  {
+    "id": "instructor1",
+    "name": "김요가",
+    "qualification": "요가 지도사 1급, 10년 수련 경력",
+    "philosophy": "함께 호흡하며 몸과 마음을 돌보는 시간을 만들어갑니다."
+  },
+  {
+    "id": "instructor2",
+    "name": "이명상",
+    "qualification": "요가 지도사 2급, 8년 수련 경력",
+    "philosophy": "자연스러운 움직임 속에서 나를 발견하는 여정을 안내합니다."
+  }
+]
+
