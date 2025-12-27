@@ -44,12 +44,16 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-text-dark"
+            className={`md:hidden relative p-2 rounded-full transition-all duration-300 ${
+              isOpen
+                ? 'bg-primary text-white'
+                : 'bg-primary-soft text-primary hover:bg-primary hover:text-white'
+            }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="메뉴"
           >
             <svg
-              className="w-6 h-6"
+              className="w-6 h-6 transition-transform duration-300"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -68,17 +72,20 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-primary/10">
-            {navItems.map((item) => (
+          <div className="md:hidden py-6 space-y-3 border-t border-primary/20 bg-gradient-to-b from-primary-soft/30 to-background">
+            {navItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block text-sm font-light transition-colors ${
+                className={`block px-4 py-3 text-sm font-light rounded-sm transition-all duration-300 ${
                   pathname === item.href
-                    ? 'text-primary'
-                    : 'text-text hover:text-primary'
+                    ? 'bg-primary text-white shadow-md'
+                    : 'text-text hover:bg-primary/10 hover:text-primary'
                 }`}
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                }}
               >
                 {item.label}
               </Link>
