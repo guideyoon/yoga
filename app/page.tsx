@@ -71,21 +71,15 @@ export default function Home() {
             transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
           }}
         >
-          <div className="inline-block px-8 py-4 bg-white/85 backdrop-blur-sm rounded-sm shadow-xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-text-dark leading-relaxed">
-              몸과 마음이 함께 쉬는 시간
-            </h1>
-          </div>
-          <div className="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm rounded-sm shadow-lg max-w-2xl">
-            <p className="text-lg md:text-xl text-text-dark">
-              천천히 호흡하고 자연스럽게 움직입니다
-            </p>
-          </div>
-          <div className="inline-block px-5 py-2 bg-white/75 backdrop-blur-sm rounded-sm shadow-md">
-            <p className="text-base md:text-lg text-text-dark">
-              일상 속에서 나를 돌보는 요가 수련
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+            몸과 마음이 함께 쉬는 시간
+          </h1>
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]">
+            천천히 호흡하고 자연스럽게 움직입니다
+          </p>
+          <p className="text-base md:text-lg text-white/95 drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
+            일상 속에서 나를 돌보는 요가 수련
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link
               href="/classes"
