@@ -117,11 +117,15 @@ export default function Home() {
           </ScrollFadeIn>
           <ScrollFadeIn delay={200}>
             <ImageHover>
-              <div className="relative h-[400px] bg-gradient-to-br from-natural-soft via-primary-soft to-secondary-soft rounded-sm overflow-hidden">
-                {/* 이미지 플레이스홀더 - 실제 이미지로 교체 필요 */}
-                <div className="absolute inset-0 flex items-center justify-center text-text-light">
-                  <p className="text-sm">스튜디오 이미지</p>
-                </div>
+              <div className="relative h-[400px] rounded-sm overflow-hidden">
+                <Image
+                  src="/s1.png"
+                  alt="요가 스튜디오 공간"
+                  fill
+                  className="object-cover"
+                  priority
+                  quality={90}
+                />
               </div>
             </ImageHover>
           </ScrollFadeIn>
