@@ -89,7 +89,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border border-secondary text-secondary font-light rounded-sm hover:bg-secondary-soft transition-all duration-300 hover:border-secondary-dark"
+              className="px-8 py-3 bg-white/95 backdrop-blur-sm border-2 border-secondary text-secondary font-light rounded-sm hover:bg-secondary hover:text-white transition-all duration-300 hover:border-secondary-dark shadow-lg"
             >
               예약 문의
             </Link>
