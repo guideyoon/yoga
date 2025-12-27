@@ -8,6 +8,9 @@ import ImageHover from '@/components/ImageHover'
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const heroImages = ['/h1.png', '/h2.png', '/h3.png']
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -21,50 +24,45 @@ export default function Home() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 5000) // 5초마다 이미지 변경
+
+    return () => clearInterval(interval)
+  }, [heroImages.length])
+
   return (
     <div className="pt-16">
       {/* 히어로 섹션 */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary-soft/30 via-background to-background">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary-soft/20 via-transparent to-transparent" />
-        
-        {/* 배경 이미지들 - 자연스럽게 이동 */}
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* 배경 이미지 - 하나씩 순차적으로 변경 */}
         <div className="absolute inset-0 z-0">
-          {/* h1.png - 오른쪽으로 매우 천천히 이동 */}
-          <div className="absolute top-1/4 left-0 w-64 md:w-80 opacity-30 animate-float-right-slow">
-            <Image
-              src="/h1.png"
-              alt="요가 이미지 1"
-              width={320}
-              height={320}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-          
-          {/* h2.png - 왼쪽으로 천천히 이동 */}
-          <div className="absolute top-1/2 right-0 w-56 md:w-72 opacity-25 animate-float-left">
-            <Image
-              src="/h2.png"
-              alt="요가 이미지 2"
-              width={288}
-              height={288}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-          
-          {/* h3.png - 위에서 아래로 천천히 이동 */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-64 opacity-20 animate-float-down">
-            <Image
-              src="/h3.png"
-              alt="요가 이미지 3"
-              width={256}
-              height={256}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
+          {heroImages.map((src, index) => (
+            <div
+              key={src}
+              className={`absolute inset-0 transition-opacity duration-2000 ease-in-out ${
+                currentImageIndex === index ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={src}
+                  alt={`요가 이미지 ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                  quality={90}
+                />
+                {/* 오버레이 - 이미지 위에 약간의 그라데이션 */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/40" />
+              </div>
+            </div>
+          ))}
         </div>
+        
+        {/* 추가 그라데이션 오버레이 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-soft/20 via-transparent to-background/30 z-[1]" />
         
         <div
           className="relative z-10 text-center px-4 space-y-6 transition-transform duration-1000 ease-out"
