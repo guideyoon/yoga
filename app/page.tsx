@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import ScrollFadeIn from '@/components/ScrollFadeIn'
 import ImageHover from '@/components/ImageHover'
@@ -25,6 +26,46 @@ export default function Home() {
       {/* 히어로 섹션 */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary-soft/30 via-background to-background">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary-soft/20 via-transparent to-transparent" />
+        
+        {/* 배경 이미지들 - 자연스럽게 이동 */}
+        <div className="absolute inset-0 z-0">
+          {/* h1.png - 오른쪽으로 매우 천천히 이동 */}
+          <div className="absolute top-1/4 left-0 w-64 md:w-80 opacity-30 animate-float-right-slow">
+            <Image
+              src="/h1.png"
+              alt="요가 이미지 1"
+              width={320}
+              height={320}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+          
+          {/* h2.png - 왼쪽으로 천천히 이동 */}
+          <div className="absolute top-1/2 right-0 w-56 md:w-72 opacity-25 animate-float-left">
+            <Image
+              src="/h2.png"
+              alt="요가 이미지 2"
+              width={288}
+              height={288}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+          
+          {/* h3.png - 위에서 아래로 천천히 이동 */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-64 opacity-20 animate-float-down">
+            <Image
+              src="/h3.png"
+              alt="요가 이미지 3"
+              width={256}
+              height={256}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        </div>
+        
         <div
           className="relative z-10 text-center px-4 space-y-6 transition-transform duration-1000 ease-out"
           style={{
